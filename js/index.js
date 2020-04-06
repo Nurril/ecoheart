@@ -31,7 +31,7 @@ var firebaseConfig =
             var errorCode = error.code;
             var errorMessage = error.message;
 
-            console.log(errorCode);
+            Console.log(errorCode);
             onsole.log(errorMessage);
 
             window.alert("Message: "+ errorMessage);
@@ -64,19 +64,20 @@ var firebaseConfig =
     {
         
 
-        result.catch(function(error)
-        {
+        
             if (password == cpassword )
             {
-                var errorCode = error.code;
+                var result = firebase.auth().createUserWithEmailAndPassword(email, password);
+                
+          var errorCode = error.code;
             var errorMessage = error.message;
 
-            console.log(errorCode);
+            Console.log(errorCode);
             onsole.log(errorMessage);
 
             window.alert("Message: "+ errorMessage);
 
-            var result = firebase.auth().createUserWithEmailAndPassword(email, password);
+            
 
             }
             else
@@ -85,7 +86,7 @@ var firebaseConfig =
                 location.reload(true);
                
             }
-        });
+       
 
     }
     
